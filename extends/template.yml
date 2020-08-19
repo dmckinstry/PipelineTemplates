@@ -15,9 +15,9 @@ stages:
     - script: echo Place holder for before the build 
       displayName: 'Base: Pre-build'
 
-    - ${{ each step in parameters.steps }}:
-      - ${{ each pair in step }}:
-        ${{ pair.key }}: ${{ pair.value }}       
+#    - ${{ each step in parameters.steps }}:
+#      - ${{ each pair in step }}:
+#        ${{ pair.key }}: ${{ pair.value }}       
 
     - script: echo Running Veracode
       displayName: 'Base: Security Scan'
