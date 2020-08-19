@@ -1,0 +1,25 @@
+parameters:
+- name: steps
+  type: stepList
+  default: []
+- name: publishArtifact
+  type: string
+  default: ''
+  
+stages:
+- stage: secure_buildstage
+  pool: ubuntu-latest
+  jobs:
+  - job: 
+    steps:
+    - script: echo Place holder for before the build 
+      displayName: 'Base: Pre-build'
+
+    - ${{ each step in parameters.steps }}:
+      - ${{ each pair in step }}:
+        ${{ pair.key }}: ${{ pair.value }}       
+
+    - script: echo Running Veracode
+      displayName: 'Base: Security Scan'
+    - ${{ if ne(parameters.publishArtifact, '' ) }}:
+      - script: echo Publishing artifact ${{parameters.publishArtifact}} to Artifactory
