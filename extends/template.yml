@@ -1,5 +1,5 @@
 parameters:
-- name: steps
+- name: buildSteps
   type: stepList
   default: []
 - name: publishArtifact
@@ -16,7 +16,7 @@ stages:
     - script: echo Place holder for before the build 
       displayName: 'Base: Pre-build'
 
-    - ${{ each step in parameters.steps }}:
+    - ${{ each step in parameters.buildSteps }}:
       - ${{ each pair in step }}:
         ${{ pair.key }}: ${{ pair.value }}       
 
