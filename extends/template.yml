@@ -18,7 +18,7 @@ stages:
 
     - ${{ each step in parameters.buildSteps }}:
       - ${{ each pair in step }}:
-        ${{ pair.key }}: ${{ pair.value }}       
+          ${{ pair.key }}: ${{ pair.value }}       
 
     - script: echo Running Veracode
       displayName: 'Base: Security Scan'
