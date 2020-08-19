@@ -8,9 +8,10 @@ parameters:
   
 stages:
 - stage: secure_buildstage
-  pool: ubuntu-latest
   jobs:
   - job: 
+    pool:
+      vmImage: 'ubuntu-16.04'    
     steps:
     - script: echo Place holder for before the build 
       displayName: 'Base: Pre-build'
