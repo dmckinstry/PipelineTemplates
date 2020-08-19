@@ -1,0 +1,9 @@
+parameters:
+- name: packageName
+  type: string
+- name: packageVersion
+  type: string
+  default: '1.0.0'
+  
+steps:
+- script: echo Publishing package ${{parameter.packageName}} v${{parameters.packageVersion}} to Artifactory
