@@ -6,4 +6,4 @@ parameters:
   default: '1.0.0'
   
 steps:
-- script: echo Publishing package ${{parameter.packageName}} v${{parameters.packageVersion}} to Artifactory
+- script: echo Publishing package ${{parameters.packageName}} v${{parameters.packageVersion}} to Artifactory
