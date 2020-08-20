@@ -14,14 +14,14 @@ stages:
       vmImage: 'ubuntu-16.04'    
     steps:
     - script: echo Place holder for before the build 
-      displayName: 'Base: Pre-build'
+      displayName: 'Pre-build (Template)'
 
     - ${{ each step in parameters.buildSteps }}:
       - ${{ each pair in step }}:
           ${{ pair.key }}: ${{ pair.value }}       
 
     - script: echo Running Veracode
-      displayName: 'Base: Security Scan'
+      displayName: 'Security Scan (Template)'
     - ${{ if ne(parameters.publishArtifact, '' ) }}:
       - template: /uses/publishArtifactory.yml
         parameters: 
