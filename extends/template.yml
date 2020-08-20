@@ -23,7 +23,7 @@ stages:
     - script: echo Running Veracode
       displayName: 'Base: Security Scan'
     - ${{ if ne(parameters.publishArtifact, '' ) }}:
-      - template: ../uses/publishArtifacts.yml
+      - template: /uses/publishArtifactory.yml
         parameters: 
           packageName: ${{parameters.publishArtifact}}
           packageVersion: 1.2.3
