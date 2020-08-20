@@ -7,3 +7,4 @@ parameters:
   
 steps:
 - script: echo Publishing package ${{parameters.packageName}} v${{parameters.packageVersion}} to Artifactory
+  displayName: Publish
