@@ -8,6 +8,6 @@ parameters:
 steps:
 - script: echo Publishing package ${{parameters.packageName}} v${{parameters.packageVersion}} to Artifactory
   displayName: Publish
-- script: echo Using MyPackage
-  condition: and(succeeded(), eq( '${{ parameters.packageName }}', 'MyPackage'))
+- script: echo Not using MyPackage
+  condition: and(succeeded(), ne( '${{ parameters.packageName }}', 'MyPackage'))
   displayName: Conditional message
