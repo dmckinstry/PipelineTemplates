@@ -1,6 +1,7 @@
 parameters:
 - name: packageName
   type: string
+  default: DefaultPackageName
 - name: packageVersion
   type: string
   default: '1.0.0'
